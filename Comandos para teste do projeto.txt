@@ -1,0 +1,73 @@
+Comandos para Teste do projeto
+
+***USUÁRIOS*******************************************************************************************************
+
+POST
+Url: http://localhost:8080/ProjetoAgendaRest/usuario
+ {	
+	"usuario":{
+		"nome": "Enzo Gabriel",
+		"cpf": "76574567674",
+		"idade": 1
+	},
+	"username": "enzo",
+	"pwd": "123123"
+}
+**********************************************************************************************************
+GET
+Url: 
+	http://localhost:8080/ProjetoAgendaRest/usuario   ---> Lista todos
+	http://localhost:8080/ProjetoAgendaRest/usuario/2 ---> Lista por Id
+**********************************************************************************************************
+PUT 
+Url: http://localhost:8080/ProjetoAgendaRest/usuario
+	{
+        
+		"nome": "Andre Gomes da Silva",
+        
+		"cpf": "02450688480",
+        
+		"idade": 40,
+        
+		"usuarioId": 1
+    
+	}
+**********************************************************************************************************
+DELETE 
+Url: http://localhost:8080/ProjetoAgendaRest/usuario/2
+**********************************************************************************************************
+POST AUTENTICAÇÃO - Vai retornar o token
+Url: http://localhost:8080/ProjetoAgendaRest/autenticacao
+	{	
+		"username": "enzo",
+		"pwd": "123123"
+	}
+
+
+***CONTATOS***********************************************************************************************
+POST - Anexando o Token retornado na autenticação
+Url: http://localhost:8080/ProjetoAgendaRest/contato
+	{
+		"nome":"Thatiane Gomes",
+        	"telefone":"9988432345",
+        	"email": "thati@gmail.com"
+	}
+**********************************************************************************************************
+GET - Anexando o Token retornado na autenticação
+Url: http://localhost:8080/ProjetoAgendaRest/contato   ---> Lista todos os contatos do token fornecido
+**********************************************************************************************************
+PUT - Anexando o Token retornado na autenticação
+uRL: http://localhost:8080/ProjetoAgendaRest/contato
+{
+	"contatoId":3,
+        "nome":"Mulher Maravilha",
+        "telefone":"345353523445345345",
+        "email":"mulhermaravilha@gmail.com",
+        "usuario":{
+			"usuarioId":1
+		  }
+}
+**********************************************************************************************************
+DELETE - Anexando o Token retornado na autenticação
+Url: http://localhost:8080/ProjetoAgendaRest/contato/2
+**********************************************************************************************************
